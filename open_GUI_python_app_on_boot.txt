@@ -1,0 +1,66 @@
+GUI python script needs to be open from autostart (cronpad work wont do cause the gui needs all graphical
+interface to be ready)
+
+1. You need to create .desktop file that will launch once user is logged
+You should do it for one-specific user not sudo user to not mess-up the rasberry pi booting process 
+
+2.open main.py file 
+
+so lets say you want to open python file in this directory 
+
+	/home/pi/Documents/js_scripts/electron_ui/open_apps_starter/main.py
+
+main.py is the name of the file which has to be reffered below 
+
+3. create the file with the content 
+
+vim /home/pi/.config/autostart/main.desktop
+
+content:
+**********************
+[Desktop Entry]
+Type=Application
+Name=Main
+Exec=/home/pi/Documents/js_scripts/electron_ui/open_apps_starter/main.py
+**********
+
+where Name=Main refers to main.py
+
+the file has to be saved as: main.desktop from the reference of main.py
+
+>>>>>>>>>><<<<<<<<<<<<<<>>>>>>>>>><<<<<<<<<<<<<<>>>>>>>>>><<<<<<<<<<<<<<>>>>>>>>>><<<<<<<<<<<<<<
+**************ADITIONAL steps -migh work without them try the ABOVE FIRST *************
+>>>>>>>>><<<<<<<<<<<<<<<>>>>>>>>>><<<<<<<<<<<<<<>>>>>>>>>><<<<<<<<<<<<<<>>>>>>>>>><<<<<<<<<<<<<<
+
+1. copy autostart file from sudo user into config
+
+cp /etc/xdg/lxsession/LXDE-pi/autostart  .config/lxsession/LXDE-pi/
+
+2.open up yor newley created autostart in vim
+
+vim .config/lxsession/LXDE-pi/autostart
+
+the content should look like that 
+
+**************
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreesaver -no-splash
+***********
+
+now add extra line to open your script on boot up
+
+**************
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreesaver -no-splash
+@/usr/bin/python /home/pi/Documents/js_scripts/electron_ui/open_apps_starter/main.py
+***********
+
+how to check for python3 executable: which python3
+the rest is the absolute path to your pathon script
+
+
+
+
+
