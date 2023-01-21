@@ -1,0 +1,123 @@
+@font-face {
+  font-family: Cartoon;
+  src: url(./assets/starborn/Starborn.ttf);
+}
+
+font {
+ text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+ text-rendering: optimizeLegibility !important;
+ -webkit-font-smoothing: antialiased !important;
+ }      
+
+body {
+  background: forestgreen;
+  width: 100vw;
+  height: 100vh;
+}
+
+div.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+div.buttons {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+div.buttons p {
+  font-family: Cartoon;
+  font-size: 20px;
+  color: #fcb501;
+}
+div.buttons img {
+  width: 80%;
+  height: auto;
+  border: transparent;
+  border-radius: 50%;
+}
+
+div.buttons:nth-child(2) img {
+  width: 58%;
+}
+
+/***  overlay close Pie***/
+.close_pi_button {
+  position:absolute;
+  top:30px;
+}
+.close_pi_button  button{
+ background-color: #114155;
+}
+.close_pi_button  button span,
+.close_pi_button  button i{
+  color: red;
+ }
+
+#closePie {
+  display: none;
+}
+
+.progressBoard {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 2;
+}
+.progressBoardContent {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/*close pie Overlay*/
+.progressBoardContent.contentBoard .closeOverlay {
+  border: 5px inset green;
+  width: 60%;
+  padding: 50px 10px 30px 10px;
+  background-color: seashell;
+  text-align: center;
+}
+.progressBoardContent.contentBoard .closeOverlay h5 {
+  color: hotpink;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+.progressBoardContent.contentBoard .closeOverlay img {
+  width: 43px;
+  height: auto;
+}
+
+.progressBoardContent.contentBoard .closeOverlay div.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 23px;
+}
+
+.progressBoardContent.contentBoard
+  .closeOverlay
+  div.buttons
+  button:first-child {
+  margin-left: 10px;
+  background-color: green;
+}
+.progressBoardContent.contentBoard .closeOverlay div.buttons button:last-child {
+  margin-right: 10px;
+  background-color: hotpink;
+}
+/********* overlay close Pie ***********/
