@@ -1,5 +1,7 @@
 import os
 import eel
+import eel.browsers
+
 
 # init web directory has to be absolute path otherwise it wont work from root
 eel.init("/home/pi/Documents/js_scripts/electron_ui/open_apps_starter/web_client")
@@ -22,4 +24,4 @@ def openApp(app):
 
 
 # start the entry file index.html file from web_client directory
-eel.start("/index.html",port=9000, size=(780, 430), position=(10, 10))
+eel.start("/index.html",port=9000, mode='chrome-app', size=(800, 430), position=(10, 10))
